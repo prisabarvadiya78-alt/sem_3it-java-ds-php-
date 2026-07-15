@@ -1,0 +1,11 @@
+car_id,brand,model,price,city,discount
+1,maruti,swift,650000,rajkot,5%
+2,maruti,eartica,900000,ahmedabad,10%
+3,hyundai,i20,1000000,rajkot,2%
+4,hyundai,creata,1200000,rajkot,4%
+5,tata,nexon,900000,junagadh,5%
+6,tata,,600000,jetpur,2%
+7,kia,sonet,1300000,,4%
+8,kia,seltos,1200000,rajkot,5%
+9,honda,city,1100000,surat,7%
+10,honda,amaze,800000,surat,10%
