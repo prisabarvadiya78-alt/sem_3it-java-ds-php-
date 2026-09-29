@@ -1,25 +1,27 @@
 <?php
+$con = mysqli_connect("localhost", "root", "","university");
 
-$conn = mysqli_connect("localhost", "root", "", "student");
-
-if (!$conn) {
-    die("Connection failed");
+if (!$con) 
+{
+    exit();
 }
+$id = $_GET['id'];
+$qry = "DELETE FROM students WHERE id =$id";
 
-if (isset($_GET['id'])) {
-
-    $id = $_GET['id'];
-
-    $sql = "DELETE FROM information WHERE id = $id";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "Record deleted successfully";
-    } else {
-        echo "Error: " . mysqli_error($conn);
+if (mysqli_query($con, $qry)) 
+    {
+        if (mysqli_affected_rows($con) > 0)
+    {
+        echo "record is delete";
+    } 
+    else
+    {
+        echo "record is not available";
     }
-
-} else {
-    echo "ID not found";
+}
+else
+{
+   echo "error in deleting";
 }
 
 ?>
