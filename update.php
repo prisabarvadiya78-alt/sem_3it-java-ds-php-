@@ -8,13 +8,9 @@ if (!$con)
 $id = $_GET['id'];
 $qry = "select * from students WHERE id=$id";
 $result=mysqli_query($con,$qry);
-if (mysqli_num_rows($result) == 0)
-    { 
-        echo "record not available";
-        exit();
-    }
 $row=mysqli_fetch_assoc($result);
 ?>
+
     
 <form action="" method="POST">
     id: <input type="text" name="id" value="<?php echo $row['id']; ?>"><br><br>
@@ -34,8 +30,7 @@ if(isset($_POST['update']))
         $mob=$_POST['mob'];
         $dob=$_POST['dob'];
        $qry = "UPDATE students SET name='$name', dept='$dept',mob=$mob,dob='$dob' WHERE id=$id"; 
-       if(mysqli_affected_rows($con) > 0)
-   {
+       
         if(mysqli_query($con,$qry))
             {
                 echo "record updated successfully";
@@ -44,10 +39,6 @@ if(isset($_POST['update']))
             {
                 echo "error updating record";
             }   
-    }
-    else
-        {
-            echo "error updating record";
-        }
+   
     }
 ?>
