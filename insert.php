@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 
     $qry = "INSERT INTO students(name, dept, mob, dob) VALUES('$name', '$dept', $mob,'$dob')";
     
-    if (mysqli_multi_query($con, $qry))
+    if (mysqli_query($con, $qry))
          {
 
         
