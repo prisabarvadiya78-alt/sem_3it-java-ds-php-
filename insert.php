@@ -27,25 +27,6 @@ if (isset($_POST['submit'])) {
          {
 
         
-                   $last_id = mysqli_insert_id($con);
-                   echo "Inserted successfully! ID: " . $last_id . "<br><br>";
-
-                   $result = mysqli_query($con, "SELECT * FROM students");
- 
-                   while ($row = mysqli_fetch_row($result)) 
-        {
-                echo "ID: " . $row[0] . "<br>";
-                echo "Name: " . $row[1] . "<br>";
-                echo "Dept: " . $row[2] . "<br>";
-                echo "mob: " . $row[3] . "<br>"; 
-                echo "dob: " . $row[4] . "<br><br>";
-        }
-
-        mysqli_free_result($result);
-    } 
-    else 
-    {
-        echo "Error: " . mysqli_error($con);
-    }
+             echo "insert";
 }
 ?>
